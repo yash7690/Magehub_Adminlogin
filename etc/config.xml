@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magehub. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <mh_adminlogin>
+            <general>
+                <enable>1</enable>
+                <username>admin</username>
+                <password>admin123</password>
+                <allowed_ip>*</allowed_ip>
+            </general>
+        </mh_adminlogin>
+    </default>
+</config>

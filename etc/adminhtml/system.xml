@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magehub. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="mh_adminlogin" translate="label" sortOrder="100" showInDefault="1" showInWebsite="0" showInStore="0">
+            <class>separator-top</class>
+            <label>Admin Login</label>
+            <tab>magehub</tab>
+            <resource>Magehub_Adminlogin::config_root</resource>
+            <group id="general" translate="label" type="text" showInDefault="1" showInWebsite="0" showInStore="0" sortOrder="10">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" showInDefault="1" showInWebsite="0" showInStore="0" sortOrder="10">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="username" translate="label" type="text" showInDefault="1" showInWebsite="0" showInStore="0" sortOrder="20">
+                    <label>Admin Username</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="password" translate="label" type="text" showInDefault="1" showInWebsite="0" showInStore="0" sortOrder="30">
+                    <label>Admin Password</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="allowed_ip" translate="label" type="text" showInDefault="1" showInWebsite="0" showInStore="0" sortOrder="40">
+                    <label>Allowed IPs</label>
+                    <comment><![CDATA[Comma seprated IP addresses. Keep * to allow all. For eg.<br />192.168.0.1,192.168.0.2]]></comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="current_ip" translate="label" type="label" showInDefault="1" showInWebsite="0" showInStore="0" sortOrder="50">
+                    <label>Current IP Address</label>
+                    <frontend_model>Magehub\Adminlogin\Block\Adminhtml\System\Config\Field\CurrentIP</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
